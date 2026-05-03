@@ -30,8 +30,13 @@
     <section class="panel section page-hero">
       <div class="container">
         <p class="eyebrow">Licensing and registration</p>
-        <h1>DMV Services</h1>
-        <p class="intro">Manage driver licenses, vehicle registrations, plate lookups, and administrative status for NThaCityRP streets.</p>
+        <h1>DMV Licensing & Vehicle Records</h1>
+        <p class="intro">Register vehicles, manage licenses, verify insurance, and keep city driving records organized for RP enforcement.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#license-form">Apply for License</a>
+          <a class="button button-secondary" href="#vehicle-form">Register Vehicle</a>
+          <a class="button button-secondary" href="#dmv-plate-form">Lookup Plate</a>
+        </div>
       </div>
     </section>
 
@@ -52,14 +57,32 @@
           <article class="card form-card">
             <h3>Driver license application</h3>
             <form id="license-form" class="system-form">
-              <label><span>Civilian name</span><input name="licenseName" type="text" required /></label>
-              <label><span>Date of birth</span><input name="licenseDob" type="date" required /></label>
-              <label><span>Address</span><input name="licenseAddress" type="text" required /></label>
-              <label><span>License class</span><select name="licenseClass" required><option value="">Select</option><option>Class A</option><option>Class B</option><option>Class C</option></select></label>
-              <label><span>Test status</span><select name="testStatus" required><option value="">Select</option><option>Passed</option><option>Failed</option><option>Pending</option></select></label>
-              <label><span>Restrictions</span><input name="restrictions" type="text" placeholder="Corrective lenses / probation" /></label>
-              <label><span>Expiration date</span><input name="licenseExpiration" type="date" required /></label>
-              <button class="button button-primary" type="submit">Submit License</button>
+              <div class="form-grid">
+                <div class="form-row">
+                  <label><span>Civilian name</span><input name="licenseName" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Date of birth</span><input name="licenseDob" type="date" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Address</span><input name="licenseAddress" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>License class</span><select name="licenseClass" required><option value="">Select</option><option>Class C</option><option>Motorcycle</option><option>Commercial</option><option>Firearm</option><option>Business</option><option>Pilot</option><option>Boating</option></select></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Test status</span><select name="testStatus" required><option value="">Select</option><option>Passed</option><option>Failed</option><option>Pending</option><option>Waived</option></select></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Restrictions</span><input name="restrictions" type="text" placeholder="Corrective lenses / probation" /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Expiration date</span><input name="licenseExpiration" type="date" required /></label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button button-primary" type="submit">Submit License Application</button>
+              </div>
               <div class="form-status" id="license-status"></div>
             </form>
           </article>
@@ -67,33 +90,62 @@
           <article class="card form-card">
             <h3>Vehicle registration</h3>
             <form id="vehicle-form" class="system-form">
-              <label><span>Owner name</span><input name="ownerName" type="text" required /></label>
-              <label><span>Vehicle make</span><input name="vehicleMake" type="text" required /></label>
-              <label><span>Vehicle model</span><input name="vehicleModel" type="text" required /></label>
-              <label><span>Year</span><input name="vehicleYear" type="number" min="1980" max="2026" required /></label>
-              <label><span>Color</span><input name="vehicleColor" type="text" required /></label>
-              <label><span>Plate number</span><input name="plateNumber" type="text" required /></label>
-              <label><span>Insurance status</span><select name="insuranceStatus" required><option value="">Select</option><option>Insured</option><option>Uninsured</option><option>Pending</option></select></label>
-              <label><span>Registration status</span><select name="registrationStatus" required><option value="">Select</option><option>Active</option><option>Expired</option><option>Suspended</option></select></label>
-              <button class="button button-primary" type="submit">Register Vehicle</button>
+              <div class="form-grid">
+                <div class="form-row">
+                  <label><span>Owner name</span><input name="ownerName" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Vehicle make</span><input name="vehicleMake" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Vehicle model</span><input name="vehicleModel" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Year</span><input name="vehicleYear" type="number" min="1980" max="2026" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Color</span><input name="vehicleColor" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Plate number</span><input name="plateNumber" type="text" required /></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Insurance status</span><select name="insuranceStatus" required><option value="">Select</option><option>Active</option><option>Expired</option><option>None</option><option>Pending</option></select></label>
+                </div>
+                <div class="form-row">
+                  <label><span>Registration status</span><select name="registrationStatus" required><option value="">Select</option><option>Active</option><option>Expired</option><option>Suspended</option><option>Pending</option><option>Impounded</option></select></label>
+                </div>
+                <div class="form-row full-width">
+                  <label><span>Notes</span><textarea name="notes" rows="3"></textarea></label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button button-primary" type="submit">Register Vehicle</button>
+              </div>
               <div class="form-status" id="vehicle-status"></div>
             </form>
           </article>
         </div>
 
         <article class="card form-card full-width">
-          <h3>Plate lookup mockup</h3>
-          <form id="plate-form" class="system-form">
-            <label><span>Plate number</span><input name="plateSearch" type="text" required /></label>
-            <label><span>Vehicle description</span><input name="vehicleDesc" type="text" /></label>
-            <label><span>Registered owner</span><input name="plateOwner" type="text" /></label>
-            <label><span>Insurance</span><select name="plateInsurance"><option value="">Select</option><option>Insured</option><option>Uninsured</option><option>Pending</option></select></label>
-            <label><span>Flags</span><input name="plateFlags" type="text" placeholder="Stolen / expired / suspended" /></label>
-            <button class="button button-primary" type="submit">Run Plate Lookup</button>
-            <div class="form-status" id="plate-status"></div>
+          <h3>Plate lookup</h3>
+          <form id="dmv-plate-form" class="system-form">
+            <div class="form-grid">
+              <div class="form-row">
+                <label><span>Plate number</span><input name="plateSearch" type="text" required /></label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Run Plate Lookup</button>
+            </div>
+            <div class="form-status" id="dmv-plate-status"></div>
           </form>
         </article>
       </div>
+    </section>
+
+    <section class="container section lookup-results">
+      <div id="dmv-plate-results"></div>
     </section>
 
     <section class="container section data-summary">
@@ -104,6 +156,16 @@
           <li>Suspended licenses may be enforced in police stops and DMV audits.</li>
           <li>Expired registrations are flagged in vehicle lookups.</li>
           <li>Insurance status is essential for road-based RP and incident handling.</li>
+        </ul>
+      </div>
+      <div class="card summary-card">
+        <h2>DMV rules / notices</h2>
+        <ul>
+          <li>Drivers must follow RP traffic laws and yield to police signals.</li>
+          <li>Plate numbers should match official DMV registration records.</li>
+          <li>Suspended drivers can be cited or arrested depending on scene context.</li>
+          <li>Insurance status may affect traffic stop outcomes and RP consequences.</li>
+          <li>DMV fraud or false reporting can lead to warrants or staff review.</li>
         </ul>
       </div>
     </section>
