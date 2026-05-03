@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civilian Registration | NThaCityRP</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <a class="brand" href="index.html">NThaCityRP</a>
+      <button class="nav-toggle" aria-label="Open navigation">Menu</button>
+      <nav class="global-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="civilian.html">Civilian Registration</a>
+        <a href="police.html">Police / CAD</a>
+        <a href="dmv.html">DMV</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="applications.html">Applications</a>
+        <a href="donations.html">Donations</a>
+        <a href="complaints.html">Complaints</a>
+        <a class="button button-ghost" href="join.html">Join Discord</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel section page-hero">
+      <div class="container">
+        <p class="eyebrow">Civilian identity system</p>
+        <h1>Civilian Registration</h1>
+        <p class="intro">Register a grounded Los Santos identity for police checks, business activity, and in-character continuity.</p>
+      </div>
+    </section>
+
+    <section class="container section content-grid">
+      <article class="card info-card">
+        <h2>Civilian overview</h2>
+        <p>Every civilian in NThaCityRP should maintain an official profile for police verification, license checks, and roleplay continuity. Complete your registration before engaging with law enforcement or applying for businesses.</p>
+      </article>
+      <article class="card info-card">
+        <h2>Character profile</h2>
+        <ul>
+          <li>Identity data is used for police lookup and DMV records.</li>
+          <li>Maintain accurate occupation and faction affiliation.</li>
+          <li>Backstory details support roleplay consistency.</li>
+          <li>Emergency contacts are recorded for IC family and support RP.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel section form-panel">
+      <div class="container">
+        <h2>Register Civilian</h2>
+        <form id="civilian-form" class="system-form">
+          <div class="form-grid">
+            <label><span>First name</span><input name="firstName" type="text" required /></label>
+            <label><span>Last name</span><input name="lastName" type="text" required /></label>
+            <label><span>Date of birth</span><input name="dob" type="date" required /></label>
+            <label><span>Gender</span><select name="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to say</option></select></label>
+            <label><span>Phone number</span><input name="phone" type="tel" placeholder="(555) 019-8497" required /></label>
+            <label><span>Address / neighborhood</span><input name="address" type="text" placeholder="Little Seoul / Vinewood" required /></label>
+            <label><span>Occupation</span><input name="occupation" type="text" placeholder="Taxi driver / Mechanic" required /></label>
+            <label><span>Gang / faction affiliation</span><input name="faction" type="text" placeholder="None / Chamberlain" /></label>
+            <label><span>Discord username</span><input name="discord" type="text" placeholder="player#1234" required /></label>
+          </div>
+
+          <div class="form-grid">
+            <label><span>Emergency contact name</span><input name="emergencyName" type="text" placeholder="Family or ally" required /></label>
+            <label><span>Emergency contact phone</span><input name="emergencyPhone" type="tel" placeholder="(555) 018-2029" required /></label>
+            <label><span>Driver license status</span><select name="driverLicense" required><option value="">Select</option><option>Valid</option><option>Suspended</option><option>Pending</option></select></label>
+            <label><span>Firearm license status</span><select name="firearmLicense" required><option value="">Select</option><option>Valid</option><option>Expired</option><option>None</option></select></label>
+            <label><span>Business license status</span><select name="businessLicense" required><option value="">Select</option><option>Approved</option><option>Pending</option><option>None</option></select></label>
+          </div>
+
+          <div class="form-grid">
+            <label><span>Vehicle make</span><input name="vehicleMake" type="text" placeholder="Bravado / Declasse" /></label>
+            <label><span>Vehicle model</span><input name="vehicleModel" type="text" placeholder="Buffalo / Sultan" /></label>
+            <label><span>Vehicle color</span><input name="vehicleColor" type="text" placeholder="Matte black" /></label>
+            <label><span>Plate number</span><input name="plate" type="text" placeholder="LS-7823" /></label>
+            <label><span>Insurance status</span><select name="insurance" required><option value="">Select</option><option>Insured</option><option>Uninsured</option><option>Pending</option></select></label>
+          </div>
+
+          <label class="full-width"><span>Criminal background notes</span><textarea name="background" rows="4" placeholder="Mention active warrants, past arrests, or clean record." required></textarea></label>
+          <label class="full-width"><span>Character backstory</span><textarea name="backstory" rows="4" placeholder="Write a concise RP biography for your civilian persona." required></textarea></label>
+
+          <div class="form-actions">
+            <button type="submit" class="button button-primary">Save Civilian Profile</button>
+          </div>
+          <div class="form-status" id="civilian-status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="container section data-summary">
+      <div class="card summary-card">
+        <h2>Character profile data</h2>
+        <p>Registered identities feed into police checks, DMV records, and business background verification.</p>
+      </div>
+      <div class="card summary-card">
+        <h2>Emergency contacts</h2>
+        <p>Emergency details strengthen in-character stakes for incidents, medical scenes, and family RP.</p>
+      </div>
+      <div class="card summary-card">
+        <h2>Vehicle ownership</h2>
+        <p>Ownership records allow officers to verify plates, insurance, and registration during traffic stops.</p>
+      </div>
+      <div class="card summary-card">
+        <h2>License status</h2>
+        <p>Driver, firearm, and business licenses appear in the police and DMV systems during checks.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span class="current-year"></span> NThaCityRP — Civilian registration hub.</p>
+      <p>Keep your profile updated for law enforcement and faction activities.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

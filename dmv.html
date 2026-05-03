@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMV | NThaCityRP</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar container">
+      <a class="brand" href="index.html">NThaCityRP</a>
+      <button class="nav-toggle" aria-label="Open navigation">Menu</button>
+      <nav class="global-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="civilian.html">Civilian Registration</a>
+        <a href="police.html">Police / CAD</a>
+        <a href="dmv.html">DMV</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="applications.html">Applications</a>
+        <a href="donations.html">Donations</a>
+        <a href="complaints.html">Complaints</a>
+        <a class="button button-ghost" href="join.html">Join Discord</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel section page-hero">
+      <div class="container">
+        <p class="eyebrow">Licensing and registration</p>
+        <h1>DMV Services</h1>
+        <p class="intro">Manage driver licenses, vehicle registrations, plate lookups, and administrative status for NThaCityRP streets.</p>
+      </div>
+    </section>
+
+    <section class="container section content-grid">
+      <article class="card info-card">
+        <h2>DMV overview</h2>
+        <p>The DMV handles licensing, suspension tracking, vehicle registrations, plates, and insurance flags. This system supports both police checks and civilian ownership records.</p>
+      </article>
+      <article class="card info-card">
+        <h2>License management</h2>
+        <p>Driver classes, test status, restrictions, and expiration dates are all maintained here for realistic roleplay enforcement.</p>
+      </article>
+    </section>
+
+    <section class="panel section forms-full">
+      <div class="container">
+        <div class="card-grid">
+          <article class="card form-card">
+            <h3>Driver license application</h3>
+            <form id="license-form" class="system-form">
+              <label><span>Civilian name</span><input name="licenseName" type="text" required /></label>
+              <label><span>Date of birth</span><input name="licenseDob" type="date" required /></label>
+              <label><span>Address</span><input name="licenseAddress" type="text" required /></label>
+              <label><span>License class</span><select name="licenseClass" required><option value="">Select</option><option>Class A</option><option>Class B</option><option>Class C</option></select></label>
+              <label><span>Test status</span><select name="testStatus" required><option value="">Select</option><option>Passed</option><option>Failed</option><option>Pending</option></select></label>
+              <label><span>Restrictions</span><input name="restrictions" type="text" placeholder="Corrective lenses / probation" /></label>
+              <label><span>Expiration date</span><input name="licenseExpiration" type="date" required /></label>
+              <button class="button button-primary" type="submit">Submit License</button>
+              <div class="form-status" id="license-status"></div>
+            </form>
+          </article>
+
+          <article class="card form-card">
+            <h3>Vehicle registration</h3>
+            <form id="vehicle-form" class="system-form">
+              <label><span>Owner name</span><input name="ownerName" type="text" required /></label>
+              <label><span>Vehicle make</span><input name="vehicleMake" type="text" required /></label>
+              <label><span>Vehicle model</span><input name="vehicleModel" type="text" required /></label>
+              <label><span>Year</span><input name="vehicleYear" type="number" min="1980" max="2026" required /></label>
+              <label><span>Color</span><input name="vehicleColor" type="text" required /></label>
+              <label><span>Plate number</span><input name="plateNumber" type="text" required /></label>
+              <label><span>Insurance status</span><select name="insuranceStatus" required><option value="">Select</option><option>Insured</option><option>Uninsured</option><option>Pending</option></select></label>
+              <label><span>Registration status</span><select name="registrationStatus" required><option value="">Select</option><option>Active</option><option>Expired</option><option>Suspended</option></select></label>
+              <button class="button button-primary" type="submit">Register Vehicle</button>
+              <div class="form-status" id="vehicle-status"></div>
+            </form>
+          </article>
+        </div>
+
+        <article class="card form-card full-width">
+          <h3>Plate lookup mockup</h3>
+          <form id="plate-form" class="system-form">
+            <label><span>Plate number</span><input name="plateSearch" type="text" required /></label>
+            <label><span>Vehicle description</span><input name="vehicleDesc" type="text" /></label>
+            <label><span>Registered owner</span><input name="plateOwner" type="text" /></label>
+            <label><span>Insurance</span><select name="plateInsurance"><option value="">Select</option><option>Insured</option><option>Uninsured</option><option>Pending</option></select></label>
+            <label><span>Flags</span><input name="plateFlags" type="text" placeholder="Stolen / expired / suspended" /></label>
+            <button class="button button-primary" type="submit">Run Plate Lookup</button>
+            <div class="form-status" id="plate-status"></div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section data-summary">
+      <div class="card summary-card">
+        <h2>License status cards</h2>
+        <ul>
+          <li>Valid driver licenses are required for civilian traffic compliance.</li>
+          <li>Suspended licenses may be enforced in police stops and DMV audits.</li>
+          <li>Expired registrations are flagged in vehicle lookups.</li>
+          <li>Insurance status is essential for road-based RP and incident handling.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span class="current-year"></span> NThaCityRP — DMV records and license control.</p>
+      <p>Keep registrations current to avoid conflicts during police encounters.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
